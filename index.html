@@ -30,6 +30,7 @@ a{color:inherit;text-decoration:none}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
 @media (max-width:940px){#progRail{display:none!important}}
 @media (max-width:700px){#teamGrid{grid-template-columns:1fr!important;text-align:left}#teamGrid>div{min-width:0}}
+@media (max-width:820px){#opGrid{grid-template-columns:1fr!important}#opGrid>div:last-child{position:static!important;top:auto!important}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
 /* ===== HERO — scoped redesign (only affects #top) ===== */
 .hero-wrap{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:100svh;}
@@ -297,7 +298,7 @@ a{color:inherit;text-decoration:none}
       <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accentDeep);margin-bottom:22px;">03 / OPERATION</div>
       <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,5.6vw,4.8rem);line-height:1;letter-spacing:-.02em;margin:0 0 14px;">A day inside<br/>the operation.</h2>
       <p data-reveal style="max-width:54ch;margin:0 0 clamp(40px,5vw,60px);font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:var(--mut);">Running a stay is not one task. It's dozens of small operational decisions, most of them invisible to the guest. These are real moments, in the guests' own words.</p>
-      <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(20px,3vw,54px);align-items:start;" data-reveal>
+      <div id="opGrid" style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(20px,3vw,54px);align-items:start;" data-reveal>
         <div style="display:flex;flex-direction:column;gap:2px;">
           <button class="tl-btn" data-step="0" style="text-align:left;border:none;background:rgba(176,129,60,.12);cursor:pointer;padding:18px 18px;border-top:1px solid rgba(28,23,18,.14);display:flex;align-items:baseline;gap:16px;transition:.35s;font-family:inherit;">
             <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--accentDeep);min-width:64px;">05:00</span>
