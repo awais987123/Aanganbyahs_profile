@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Aangan by AHS — Short-Term Rental Operations</title>
+<meta name="description" content="Aangan by AHS operates short-term rentals, builds operational systems, and helps hospitality teams extend their operational capacity."/>
+<meta property="og:title" content="Aangan by AHS — Short-Term Rental Operations"/>
+<meta property="og:description" content="We operate what we manage. A real short-term-rental operation, built around real guests — and the systems we build to make it better."/>
+<meta property="og:image" content="assets/hero.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+img{display:block}
+::selection{background:#B0813C;color:#1C1712}
+a{color:inherit;text-decoration:none}
+@keyframes kb{0%{transform:scale(1.09)}100%{transform:scale(1)}}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+@media (max-width:940px){#progRail{display:none!important}}
+@media (max-width:700px){#teamGrid{grid-template-columns:1fr!important;text-align:left}#teamGrid>div{min-width:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+/* ===== HERO — scoped redesign (only affects #top) ===== */
+.hero-wrap{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:100svh;}
+.hero-media{position:relative;overflow:hidden;background:#141009;}
+.hero-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 52%;animation:heroDrift 22s ease-out both;}
+.hero-panel{position:relative;display:flex;flex-direction:column;justify-content:center;padding:clamp(92px,12vh,150px) clamp(22px,3.4vw,72px) clamp(78px,10vh,104px);background:var(--ink);border-left:1px solid rgba(239,231,216,.12);}
+.hero-h1{font-family:'Spectral',serif;font-weight:300;line-height:.9;letter-spacing:-.028em;font-size:clamp(2.9rem,6.2vw,6.6rem);margin:0;}
+.hero-line{display:block;}
+.hero-line>span{display:block;animation:heroRise2 1s cubic-bezier(.2,.7,.2,1) both;}
+.hero-rev{animation:heroRise .9s cubic-bezier(.2,.7,.2,1) both;}
+.hero-proof{position:absolute;left:clamp(22px,3.4vw,72px);right:clamp(22px,3.4vw,72px);bottom:clamp(24px,3.4vh,36px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(239,231,216,.5);}
+@keyframes heroDrift{from{transform:scale(1.09)}to{transform:scale(1)}}
+@keyframes heroRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroRise2{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pulseDot2{0%,100%{opacity:1}50%{opacity:.3}}
+@media (max-width:1024px){
+  .hero-wrap{grid-template-columns:1fr;grid-template-rows:42svh auto;}
+  .hero-media>img{object-position:60% 40%;}
+  .hero-panel{justify-content:flex-start;border-left:none;border-top:1px solid rgba(239,231,216,.1);padding:clamp(34px,5vh,52px) clamp(20px,6vw,44px) clamp(42px,6vh,60px);}
+  .hero-h1{font-size:clamp(3rem,9.4vw,5rem);}
+  .hero-proof{position:static;left:auto;right:auto;bottom:auto;margin-top:30px;}
+}
+@media (max-width:480px){
+  .hero-wrap{grid-template-rows:34svh auto;}
+  .hero-h1{font-size:clamp(2.75rem,12vw,3.7rem);}
+  .hero-proof{gap:8px;font-size:9.5px;}
+}
+</style>
+</helmet>
+<div ref="{{ root }}" style="--ink:#1C1712;--paper:#ECE4D6;--paper2:#E4D9C6;--accent:#B0813C;--accentDeep:#946a2b;--cream:#EFE7D8;--mut:rgba(28,23,18,.62);background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(18px,4vw,54px);background:rgba(20,16,12,.42);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(239,231,216,.12);">
+    <a href="#top" style="display:flex;align-items:baseline;gap:10px;color:var(--cream);">
+      <span style="font-family:'Spectral',serif;font-size:20px;letter-spacing:.01em;">Aangan</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;opacity:.62;">BY AHS</span>
+    </a>
+    <a href="#pilot" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;color:var(--cream);border:1px solid rgba(239,231,216,.4);padding:10px 16px;border-radius:100px;transition:.35s;" style-hover="background:var(--accent);border-color:var(--accent);color:#1C1712;">30-DAY PILOT →</a>
+  </header>
+
+  <nav id="progRail" aria-label="Section progress" style="position:fixed;top:50%;right:clamp(16px,2.3vw,30px);transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:15px;mix-blend-mode:difference;">
+    <sc-for list="{{ navRail }}" as="item" hint-placeholder-count="6">
+      <a href="{{ item.href }}" style="display:flex;align-items:center;gap:10px;color:#fff;opacity:{{ item.op }};font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;transition:opacity .4s;">
+        <span style="width:{{ item.w }};height:1px;background:#fff;display:inline-block;transition:width .4s;"></span>
+        <span>{{ item.n }}</span><span style="opacity:.7;">{{ item.label }}</span>
+      </a>
+    </sc-for>
+  </nav>
+
+  <section id="top" style="position:relative;background:var(--ink);color:var(--cream);overflow:hidden;">
+    <div class="hero-wrap">
+
+      <!-- LEFT · Real property as evidence -->
+      <div class="hero-media">
+        <img src="assets/hero.png" alt="Inside a live Aangan short-term rental — workspace and city view at dusk"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,12,.12) 0%,rgba(20,16,12,0) 32%,rgba(20,16,12,.5) 100%),linear-gradient(180deg,rgba(20,16,12,.5) 0%,rgba(20,16,12,0) 26%,rgba(20,16,12,.55) 100%);"></div>
+        <div style="position:absolute;inset:clamp(14px,1.3vw,22px);border:1px solid rgba(239,231,216,.16);pointer-events:none;"></div>
+        <div class="hero-rev" style="animation-delay:.55s;position:absolute;left:clamp(26px,2.4vw,42px);bottom:clamp(26px,3vh,44px);color:var(--cream);">
+          <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;">
+            <span style="width:22px;height:1px;background:var(--accent);display:inline-block;"></span>
+            <span>INSIDE A REAL AANGAN LISTING</span>
+          </div>
+          <div style="margin-top:7px;padding-left:32px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;opacity:.66;">★ 4.9 · SUPERHOST · IDENTITY VERIFIED</div>
+        </div>
+      </div>
+
+      <!-- RIGHT · The operator's ledger -->
+      <div class="hero-panel">
+        <div class="hero-rev" style="animation-delay:.05s;display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:clamp(9.5px,1vw,11px);letter-spacing:.28em;opacity:.74;margin-bottom:clamp(26px,4vh,40px);">
+          <span style="width:7px;height:7px;border-radius:100%;background:var(--accent);animation:pulseDot2 2.6s ease-in-out infinite;flex:none;"></span>
+          <span>AANGAN BY AHS &nbsp;·&nbsp; SHORT-TERM RENTAL OPERATIONS &nbsp;×&nbsp; TECHNOLOGY</span>
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="hero-line"><span style="animation-delay:.16s;">We operate</span></span>
+          <span class="hero-line"><span style="animation-delay:.3s;">what we <i style="font-style:italic;color:var(--accent);">manage.</i></span></span>
+        </h1>
+
+        <div class="hero-rev" style="animation-delay:.64s;margin-top:clamp(30px,4.2vh,46px);padding-top:22px;border-top:1px solid rgba(239,231,216,.16);max-width:42ch;">
+          <div style="display:flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--accent);margin-bottom:10px;">
+            <span>05:00</span><span style="opacity:.45;">/</span><span style="opacity:.82;">OPERATING BEFORE DAWN</span>
+          </div>
+          <p style="margin:0;font-family:'Spectral',serif;font-style:italic;font-size:clamp(15px,1.5vw,19px);line-height:1.5;color:rgba(239,231,216,.84);">“We arrived around 5am, and Awais was already in touch and available to help, and check-in was easy and stress-free.”</p>
+          <div style="margin-top:11px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:rgba(239,231,216,.5);">— RAMZAN · VERIFIED AIRBNB GUEST</div>
+        </div>
+
+        <div class="hero-rev" style="animation-delay:.82s;display:flex;flex-wrap:wrap;gap:13px;margin-top:clamp(32px,4.4vh,48px);">
+          <a href="#operation" style="background:var(--accent);color:#1C1712;padding:15px 26px;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;transition:.35s;" style-hover="background:var(--cream);">EXPLORE THE OPERATION ↓</a>
+          <a href="#pilot" style="border:1px solid rgba(239,231,216,.45);color:var(--cream);padding:15px 26px;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;transition:.35s;" style-hover="border-color:var(--cream);background:rgba(239,231,216,.08);">30-DAY PILOT →</a>
+        </div>
+
+        <div class="hero-rev hero-proof" style="animation-delay:.96s;">
+          <span>SUPERHOST · 4.9★ · 225+ VERIFIED REVIEWS</span>
+          <span>6 LIVE LISTINGS · ISB · RWP · LHR</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="proof" data-sec style="background:var(--paper);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accentDeep);margin-bottom:22px;">01 / PROOF</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(30px,5vw,70px);align-items:end;">
+        <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.02em;margin:0;">Don't take our<br/>word for it.</h2>
+        <p data-reveal style="margin:0;max-width:44ch;font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:var(--mut);">Everything below is verifiable on Airbnb. A Superhost profile, a portfolio of live listings, and the guests who actually stayed. <span style="color:var(--ink);font-weight:600;">Every review is operational feedback.</span></p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(28,23,18,.14);border:1px solid rgba(28,23,18,.14);margin-top:clamp(44px,6vw,72px);">
+        <div style="background:var(--paper);padding:30px 26px;">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:300;line-height:1;"><span data-count="4.9" data-dec="1">4.9</span><span style="color:var(--accent);font-size:.5em;vertical-align:.4em;"> ★</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--mut);margin-top:12px;">HOST RATING</div>
+        </div>
+        <div style="background:var(--paper);padding:30px 26px;">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:300;line-height:1;"><span data-count="225">225</span><span style="color:var(--accent);">+</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--mut);margin-top:12px;">VERIFIED REVIEWS</div>
+        </div>
+        <div style="background:var(--paper);padding:30px 26px;">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:300;line-height:1;"><span data-count="6">6</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--mut);margin-top:12px;">LIVE LISTINGS</div>
+        </div>
+        <div style="background:var(--paper);padding:30px 26px;">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:300;line-height:1;"><span data-count="3">3</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--mut);margin-top:12px;">CITIES · ISB · RWP · LHR</div>
+        </div>
+      </div>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;border:1px solid rgba(28,23,18,.2);border-radius:100px;padding:9px 15px;">◆ SUPERHOST</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;border:1px solid rgba(28,23,18,.2);border-radius:100px;padding:9px 15px;">GUEST FAVOURITE · 5 OF 6</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;border:1px solid rgba(28,23,18,.2);border-radius:100px;padding:9px 15px;">TOP 5% OF HOMES</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;border:1px solid rgba(28,23,18,.2);border-radius:100px;padding:9px 15px;">IDENTITY VERIFIED</span>
+      </div>
+      <a href="https://www.airbnb.com/users/profile/1470599435989083422?previous_page_name=PdpHomeMarketplace" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:16px;margin-top:26px;border:1px solid rgba(28,23,18,.2);border-radius:100px;padding:12px 22px;transition:.35s;" style-hover="border-color:var(--accent);background:rgba(176,129,60,.07);">
+        <span style="display:flex;flex-direction:column;line-height:1.3;">
+          <span style="font-family:'Spectral',serif;font-size:1.15rem;color:var(--ink);">225+ Guest Reviews</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:var(--mut);margin-top:2px;">VERIFIED AIRBNB PROFILE</span>
+        </span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--accent);">↗</span>
+      </a>
+      <div data-reveal style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(8px,2vw,20px);margin-top:clamp(48px,6vw,74px);font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,1.2vw,12px);letter-spacing:.14em;">
+        <span style="padding:12px 0;">GUEST EXPERIENCE</span>
+        <span style="color:var(--accent);">→</span>
+        <span>FEEDBACK</span>
+        <span style="color:var(--accent);">→</span>
+        <span>OPERATIONAL LEARNING</span>
+        <span style="color:var(--accent);">→</span>
+        <span style="color:var(--accentDeep);font-weight:500;">IMPROVEMENT</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="properties" data-sec style="background:var(--ink);color:var(--cream);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:22px;">02 / PROPERTIES</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,6vw,5.2rem);line-height:.98;letter-spacing:-.02em;margin:0 0 14px;">Properties we run.<br/><span style="font-style:italic;color:var(--accent);">Guests we host.</span></h2>
+      <p data-reveal style="max-width:52ch;margin:0 0 clamp(40px,5vw,66px);font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:rgba(239,231,216,.66);">A working set of homes across Islamabad, Rawalpindi and Lahore. Each one is turning over, hosting and being maintained right now.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:clamp(16px,1.6vw,24px);">
+        <sc-for list="{{ properties }}" as="p" hint-placeholder-count="6">
+          <article data-reveal style="position:relative;overflow:hidden;border-radius:3px;background:#221b15;">
+            <div style="position:relative;aspect-ratio:4/3;overflow:hidden;">
+              <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"/>
+              <div style="position:absolute;top:12px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;background:rgba(20,16,12,.7);backdrop-filter:blur(6px);padding:6px 10px;border-radius:100px;">{{ p.tag }}</div>
+            </div>
+            <div style="padding:20px 20px 22px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(239,231,216,.5);">{{ p.idx }}</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);">★ {{ p.rating }} · {{ p.reviews }}</span>
+              </div>
+              <h3 style="font-family:'Spectral',serif;font-weight:400;font-size:clamp(1.25rem,1.9vw,1.6rem);line-height:1.1;margin:8px 0 10px;"><a href="{{ p.url }}" target="_blank" rel="noopener" style-hover="color:var(--accent);">{{ p.name }}</a></h3>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:rgba(239,231,216,.55);line-height:1.7;">{{ p.city }} · {{ p.tower }}<br/>{{ p.cfg }}</div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="operation" data-sec style="background:var(--paper);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accentDeep);margin-bottom:22px;">03 / OPERATION</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,5.6vw,4.8rem);line-height:1;letter-spacing:-.02em;margin:0 0 14px;">A day inside<br/>the operation.</h2>
+      <p data-reveal style="max-width:54ch;margin:0 0 clamp(40px,5vw,60px);font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:var(--mut);">Running a stay is not one task. It's dozens of small operational decisions, most of them invisible to the guest. These are real moments, in the guests' own words.</p>
+      <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(20px,3vw,54px);align-items:start;" data-reveal>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+            <button onClick="{{ s.onClick }}" style="text-align:left;border:none;background:{{ s.bg }};cursor:pointer;padding:18px 18px;border-top:1px solid rgba(28,23,18,.14);display:flex;align-items:baseline;gap:16px;transition:.35s;font-family:inherit;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--accentDeep);min-width:64px;">{{ s.time }}</span>
+              <span style="flex:1;">
+                <span style="display:block;font-family:'Spectral',serif;font-size:clamp(1.05rem,1.6vw,1.35rem);color:{{ s.col }};transition:.35s;">{{ s.label }}</span>
+                <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:var(--mut);margin-top:4px;">{{ s.tag }}</span>
+              </span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="position:sticky;top:100px;background:var(--ink);color:var(--cream);border-radius:4px;padding:clamp(26px,3.2vw,44px);min-height:340px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:var(--accent);margin-bottom:22px;">{{ moment.time }} · {{ moment.tag }}</div>
+          <div style="margin-bottom:22px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:7px;">WHAT HAPPENED</div>
+            <p style="margin:0;font-size:clamp(15px,1.5vw,18px);line-height:1.5;">{{ moment.what }}</p>
+          </div>
+          <div style="margin-bottom:22px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:7px;">WHAT WE DID</div>
+            <p style="margin:0;font-size:clamp(15px,1.5vw,18px);line-height:1.5;">{{ moment.did }}</p>
+          </div>
+          <div style="margin-bottom:26px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:7px;">WHY IT MATTERED</div>
+            <p style="margin:0;font-size:clamp(15px,1.5vw,18px);line-height:1.5;color:var(--accent);font-family:'Spectral',serif;font-style:italic;">{{ moment.why }}</p>
+          </div>
+          <blockquote style="margin:0;border-left:2px solid var(--accent);padding-left:18px;">
+            <p style="margin:0 0 8px;font-size:14px;line-height:1.55;color:rgba(239,231,216,.78);">"{{ moment.quote }}"</p>
+            <cite style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:rgba(239,231,216,.5);font-style:normal;">— {{ moment.by }}, verified Airbnb guest</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaches" style="background:var(--ink);color:var(--cream);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:22px;">— WHAT OPERATING TEACHES</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.2rem,5.6vw,4.9rem);line-height:1;letter-spacing:-.02em;margin:0 0 clamp(44px,6vw,74px);max-width:16ch;">Operating teaches you what dashboards <span style="font-style:italic;color:var(--accent);">don't.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,3vw,56px);">
+        <sc-for list="{{ insights }}" as="i" hint-placeholder-count="4">
+          <div data-reveal style="border-top:1px solid rgba(239,231,216,.2);padding-top:24px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--accent);margin-bottom:18px;">{{ i.n }}</div>
+            <h3 style="font-family:'Spectral',serif;font-weight:400;font-size:clamp(1.4rem,2.3vw,2rem);line-height:1.12;letter-spacing:-.01em;margin:0 0 14px;">{{ i.t }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(239,231,216,.62);">{{ i.b }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="systems" data-sec style="background:var(--paper);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accentDeep);margin-bottom:22px;">04 / SYSTEMS</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(30px,5vw,70px);align-items:end;margin-bottom:clamp(48px,6vw,80px);">
+        <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,5.6vw,4.8rem);line-height:1;letter-spacing:-.02em;margin:0;">We build<br/>what we <span style="font-style:italic;color:var(--accentDeep);">need.</span></h2>
+        <p data-reveal style="margin:0;max-width:46ch;font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:var(--mut);">When a recurring operational problem shows up, we don't always go looking for another tool. Sometimes we build the system ourselves, because we know exactly what it needs to do.</p>
+      </div>
+
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,2.4vw,40px);">
+        <article style="background:var(--ink);color:var(--cream);border-radius:5px;overflow:hidden;">
+          <div style="padding:clamp(24px,2.6vw,38px) clamp(24px,2.6vw,38px) 0;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;">
+              <h3 style="font-family:'Spectral',serif;font-weight:400;font-size:clamp(1.5rem,2.4vw,2.1rem);margin:0;">BnBrain AI</h3>
+              <a href="https://bnbrainai.com/" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--accent);border:1px solid rgba(239,231,216,.28);padding:8px 13px;border-radius:100px;transition:.3s;" style-hover="background:var(--accent);color:#1C1712;border-color:var(--accent);">VISIT ↗</a>
+            </div>
+            <p style="font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--accent);line-height:1.35;margin:0 0 24px;">"Before you rent a property, run it through BnBrain."</p>
+          </div>
+          <img src="assets/sys-bnbrain.png" alt="BnBrain AI property analysis workspace" loading="lazy" style="width:100%;height:auto;border-top:1px solid rgba(239,231,216,.1);border-bottom:1px solid rgba(239,231,216,.1);"/>
+          <div style="padding:clamp(24px,2.6vw,38px);display:grid;gap:18px;">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">THE PROBLEM</div><p style="margin:0;font-size:15px;line-height:1.55;">Deciding whether a property is worth operating shouldn't be a guess.</p></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">WHAT WE BUILT</div><p style="margin:0;font-size:15px;line-height:1.55;">An evaluation workspace. Paste an Airbnb, Booking or Zameen link and it scans the photos, forecasts revenue and scores the opportunity.</p></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">HOW IT HELPS</div><p style="margin:0;font-size:15px;line-height:1.55;color:var(--accent);">We commit to properties we can defend with numbers, before the first guest ever books.</p></div>
+          </div>
+        </article>
+
+        <article style="background:var(--ink);color:var(--cream);border-radius:5px;overflow:hidden;">
+          <div style="padding:clamp(24px,2.6vw,38px) clamp(24px,2.6vw,38px) 0;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;">
+              <h3 style="font-family:'Spectral',serif;font-weight:400;font-size:clamp(1.5rem,2.4vw,2.1rem);margin:0;">HostPro</h3>
+              <a href="https://hostospro.app/" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--accent);border:1px solid rgba(239,231,216,.28);padding:8px 13px;border-radius:100px;transition:.3s;" style-hover="background:var(--accent);color:#1C1712;border-color:var(--accent);">VISIT ↗</a>
+            </div>
+            <p style="font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--accent);line-height:1.35;margin:0 0 24px;">One operating view for the whole portfolio.</p>
+          </div>
+          <img src="assets/sys-hostos.png" alt="HostPro operating dashboard showing portfolio performance" loading="lazy" style="width:100%;height:auto;border-top:1px solid rgba(239,231,216,.1);border-bottom:1px solid rgba(239,231,216,.1);"/>
+          <div style="padding:clamp(24px,2.6vw,38px);display:grid;gap:18px;">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">THE PROBLEM</div><p style="margin:0;font-size:15px;line-height:1.55;">Performance lived in screenshots, spreadsheets and separate apps.</p></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">WHAT WE BUILT</div><p style="margin:0;font-size:15px;line-height:1.55;">A single dashboard for net revenue, expenses, occupancy, ADR and RevPAR across every property.</p></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:6px;">HOW IT HELPS</div><p style="margin:0;font-size:15px;line-height:1.55;color:var(--accent);">Decisions get made on the same numbers everyone can see.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="partnership" data-sec style="background:var(--ink);color:var(--cream);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:22px;">05 / PARTNERSHIP</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.3rem,6vw,5.4rem);line-height:.98;letter-spacing:-.02em;margin:0 0 16px;">Don't replace your team.<br/><span style="font-style:italic;color:var(--accent);">Extend it.</span></h2>
+      <p data-reveal style="max-width:56ch;margin:0 0 clamp(46px,6vw,78px);font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:rgba(239,231,216,.66);">We are not trying to replace the people who already make your business work. We become an operational extension of the team you have.</p>
+      <div id="teamGrid" style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(14px,2vw,34px);align-items:center;" data-reveal>
+        <div style="min-width:0;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:rgba(239,231,216,.55);margin-bottom:20px;">YOUR TEAM</div>
+          <sc-for list="{{ teamYou }}" as="t" hint-placeholder-count="5">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.05rem,1.8vw,1.5rem);line-height:1.55;color:rgba(239,231,216,.9);">{{ t }}</div>
+          </sc-for>
+        </div>
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.6rem,3vw,2.6rem);color:var(--accent);">×</div>
+        <div style="min-width:0;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--accent);margin-bottom:20px;">AANGAN</div>
+          <sc-for list="{{ teamUs }}" as="t" hint-placeholder-count="5">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.05rem,1.8vw,1.5rem);line-height:1.55;">{{ t }}</div>
+          </sc-for>
+        </div>
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.6rem,3vw,2.6rem);color:var(--accent);">=</div>
+        <div style="min-width:0;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:rgba(239,231,216,.55);margin-bottom:20px;">RESULT</div>
+          <div style="font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,2.2rem);line-height:1.2;color:var(--accent);">More operational capacity.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guests" style="background:var(--paper);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accentDeep);margin-bottom:22px;">— GUEST PROOF</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.2rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.02em;margin:0 0 clamp(40px,5vw,64px);">In their words.</h2>
+      <div style="column-width:330px;column-gap:22px;">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="8">
+          <figure data-reveal style="break-inside:avoid;margin:0 0 22px;background:var(--paper2);border:1px solid rgba(28,23,18,.1);border-radius:4px;padding:24px 24px 22px;">
+            <div style="color:var(--accent);font-size:13px;letter-spacing:.15em;margin-bottom:14px;">{{ r.star }}</div>
+            <blockquote style="margin:0 0 18px;font-family:'Spectral',serif;font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.5;">"{{ r.q }}"</blockquote>
+            <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--mut);">{{ r.by }} · {{ r.loc }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="pilot" data-sec style="background:var(--ink);color:var(--cream);padding:clamp(84px,12vh,150px) clamp(20px,5vw,90px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:22px;">06 / THE 30-DAY PILOT</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.4rem,6.4vw,5.8rem);line-height:.96;letter-spacing:-.02em;margin:0 0 clamp(40px,5vw,60px);">Don't hire us yet.<br/><span style="font-style:italic;color:var(--accent);">Test us.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;background:rgba(239,231,216,.16);border:1px solid rgba(239,231,216,.16);margin-bottom:clamp(36px,4vw,54px);" data-reveal>
+        <sc-for list="{{ pilot }}" as="p" hint-placeholder-count="4">
+          <div style="background:var(--ink);padding:30px 24px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;margin-bottom:16px;">{{ p.n }}</div>
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.15rem,1.7vw,1.4rem);line-height:1.2;margin-bottom:8px;">{{ p.t }}</div>
+            <p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(239,231,216,.6);">{{ p.b }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p data-reveal style="max-width:60ch;font-size:clamp(15px,1.5vw,18px);line-height:1.6;color:rgba(239,231,216,.78);margin:0 0 32px;">Give us one property, one workflow, one operational problem. Thirty days, a defined scope, measured outcomes, no long-term commitment. Let the operation prove the value.</p>
+      <a href="#contact" data-reveal style="display:inline-block;background:var(--accent);color:#1C1712;padding:17px 30px;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.15em;transition:.35s;" style-hover="background:var(--cream);">START A 30-DAY PILOT →</a>
+    </div>
+  </section>
+
+  <section id="contact" style="background:#141009;color:var(--cream);padding:clamp(90px,14vh,170px) clamp(20px,5vw,90px) clamp(50px,6vh,80px);">
+    <div style="max-width:1360px;margin:0 auto;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:26px;">AANGAN BY AHS</div>
+      <h2 data-reveal style="font-family:'Spectral',serif;font-weight:300;font-size:clamp(2.8rem,9vw,8rem);line-height:.92;letter-spacing:-.02em;margin:0 0 30px;">Let's operate<br/>one <span style="font-style:italic;color:var(--accent);">property.</span></h2>
+      <p data-reveal style="max-width:52ch;font-size:clamp(15px,1.5vw,19px);line-height:1.6;color:rgba(239,231,216,.72);margin:0 0 40px;">If the way we operate feels relevant to what you're building, let's test it.</p>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:13px;margin-bottom:clamp(56px,8vw,96px);">
+        <a href="#pilot" style="background:var(--accent);color:#1C1712;padding:16px 28px;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.15em;transition:.35s;" style-hover="background:var(--cream);">START A 30-DAY PILOT →</a>
+        <a href="#contact" style="border:1px solid rgba(239,231,216,.4);color:var(--cream);padding:16px 28px;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.15em;transition:.35s;" style-hover="border-color:var(--cream);background:rgba(239,231,216,.08);">GET IN TOUCH</a>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px;border-top:1px solid rgba(239,231,216,.16);padding-top:34px;">
+        <a href="mailto:muhammadawaisashraf2@gmail.com" style="display:block;" style-hover="color:var(--accent);"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:8px;">EMAIL</div><div style="font-family:'Spectral',serif;font-size:1.2rem;">muhammadawaisashraf2@gmail.com</div></a>
+        <a href="tel:+923260575059" style="display:block;" style-hover="color:var(--accent);"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:8px;">PHONE</div><div style="font-family:'Spectral',serif;font-size:1.2rem;">+92 326 0575059</div></a>
+        <a href="https://www.instagram.com/aanganbyahsofficial/" target="_blank" rel="noopener" style="display:block;" style-hover="color:var(--accent);"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(239,231,216,.5);margin-bottom:8px;">INSTAGRAM</div><div style="font-family:'Spectral',serif;font-size:1.2rem;">@aanganbyahsofficial ↗</div></a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:56px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(239,231,216,.4);">
+        <span>AANGAN BY AHS · SHORT-TERM RENTAL OPERATIONS × TECHNOLOGY</span>
+        <span>ISLAMABAD · RAWALPINDI · LAHORE</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:720},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0813C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#B0813C&quot;,&quot;#9A5B3B&quot;,&quot;#5E6B52&quot;,&quot;#3E5C63&quot;],&quot;section&quot;:&quot;Art direction&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Cinematic&quot;,&quot;options&quot;:[&quot;Cinematic&quot;,&quot;Reduced&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Art direction&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.root = React.createRef();
+    this.state = { step: 0, active: 0, prog: 0 };
+    this._onScroll = this._onScroll.bind(this);
+
+    this.PROPS = [
+      { img:'assets/prop-modern.png', idx:'01', name:'Modern 3BR · Xbox Entertainment', url:'https://www.airbnb.com/rooms/1464307427356635891', city:'Islamabad', tower:'Apollo Tower', cfg:'9 guests · 3 bed · 3 bath', rating:'4.9', reviews:'116', tag:'Family-friendly' },
+      { img:'assets/prop-clean2br.png', idx:'02', name:'Clean & Comfy 2BR', url:'https://www.airbnb.com/rooms/1406289876482776027', city:'Islamabad', tower:'Mountain view', cfg:'6 guests · 2 bed · 2 bath', rating:'4.98', reviews:'43', tag:'Guest favourite' },
+      { img:'assets/prop-platinum.png', idx:'03', name:'The Platinum 3BHK', url:'https://www.airbnb.com/rooms/1541909053706869812', city:'Islamabad', tower:'With pool', cfg:'8 guests · 3 bed · 3 bath', rating:'4.85', reviews:'26', tag:'Guest favourite' },
+      { img:'assets/prop-gaming.png', idx:'04', name:'3BR Gaming Suite', url:'https://www.airbnb.com/rooms/1471600591836688115', city:'Islamabad', tower:'Apollo Tower E-11', cfg:'9 guests · 3 bed · 3 bath', rating:'4.78', reviews:'32', tag:'Guest favourite' },
+      { img:'assets/prop-skyluxe.png', idx:'05', name:'SkyLuxe Studio', url:'https://www.airbnb.com/rooms/1744779302596951368', city:'Rawalpindi', tower:'5 min to airport', cfg:'4 guests · studio · 2 beds', rating:'4.88', reviews:'8', tag:'Work & relax' },
+      { img:'assets/prop-amber.png', idx:'06', name:'Amber Haven 1BR', url:'https://www.airbnb.com/rooms/1739635973589027200', city:'Lahore', tower:'Bahria Town', cfg:'4 guests · 1 bed · 1 bath', rating:'5.0', reviews:'13', tag:'Top 5% of homes' },
+    ];
+
+    this.TIMELINE = [
+      { time:'05:00', label:'The early arrival', tag:'CHECK-IN',
+        what:'A guest lands around 5am, arriving into the city before dawn.',
+        did:'Someone is already in touch. Self check-in with a smartlock is ready before they reach the door, with no key handover to negotiate at 5am.',
+        why:'The first ten minutes set the tone for the whole stay. Arrival is the one moment you never get to redo.',
+        quote:'We arrived quite early in the morning around 5am, and Awais was already in touch and available to help, making the check-in easy and stress-free.',
+        by:'Ramzan' },
+      { time:'MORNING', label:'The small request', tag:'GUEST CARE',
+        what:'A guest needs to be ready for a morning out and asks for a hand.',
+        did:'Imran, our on-ground caretaker, steps in, down to ironing clothes before they head out.',
+        why:'Hospitality is the request you did not have to be asked for twice. Care is what guests actually remember.',
+        quote:'A special mention to Imran Bhai, who was extremely kind and cooperative. He even ironed our clothes in the morning, which was a big help and truly shows the level of care and hospitality provided.',
+        by:'Usman' },
+      { time:'MIDDAY', label:'Something breaks', tag:'MAINTENANCE',
+        what:'Mid-stay, a guest reports a problem inside the apartment.',
+        did:'A caretaker is dispatched immediately and arrives within about 15 minutes to resolve it.',
+        why:'A small fault becomes a bad review in the time it takes to ignore it. Response time is the product.',
+        quote:'Whenever we had an issue, he immediately sent a caretaker who arrived within about 15 minutes and resolved it.',
+        by:'Muhammad Fahad' },
+      { time:'CHECKOUT', label:'One more hour', tag:'FLEXIBILITY',
+        what:'A guest needs more time on their last morning.',
+        did:'Late checkout is granted without friction, because the calendar and the turnover behind it are already understood.',
+        why:'Flexibility is not generosity. It is knowing your operation well enough to comfortably say yes.',
+        quote:'Host Awais was very cooperative. Replied within minutes. We also asked for a late checkout and the host also made that possible.',
+        by:'Uzair' },
+    ];
+
+    this.INSIGHTS = [
+      { n:'01', t:'Guests never see your systems.', b:'They experience the outcome: a door that opens, a room that is ready, a reply that comes fast. The system only exists to protect that moment.' },
+      { n:'02', t:'A small fault becomes a big problem in minutes.', b:'The gap between a broken thing and a fixed thing is where reviews are won or lost. We manage that gap, not the excuse for it.' },
+      { n:'03', t:'Flexibility is operational, not generous.', b:'Early check-ins and late checkouts feel like favours to a guest. On our side they are just a calendar we actually understand.' },
+      { n:'04', t:'Consistency is a system, not a mood.', b:'Being good on a busy weekend is a decision made long before the weekend, in process, in people and in the tools we keep.' },
+    ];
+
+    this.REVIEWS = [
+      { q:"The place is definitely worth the amount, the building is fairly new with all the basic amenities. However, what stood out the most is Awais' communication. He was willing to help and always responded on time", by:'Xee', loc:'Manchester, UK', star:'★★★★★' },
+      { q:'Whenever we had an issue, he immediately sent a caretaker who arrived within about 15 minutes and resolved it. The host was incredibly responsive and accommodating, always replying to our queries within minutes.', by:'Muhammad Fahad', loc:'3-bedroom apartment', star:'★★★★★' },
+      { q:'We arrived quite early in the morning around 5am, and Awais was already in touch and available to help, making the check-in easy and stress-free.', by:'Ramzan', loc:'Rawalpindi, PK', star:'★★★★★' },
+      { q:'A special mention to Imran Bhai, who was extremely kind and cooperative. He even ironed our clothes in the morning, which was a big help and truly shows the level of care and hospitality provided.', by:'Usman', loc:'Lahore, PK', star:'★★★★★' },
+      { q:'Host Awais was very cooperative. Replied within minutes. Rooms were very spacious, neat and clean. We also asked for a late checkout and the host also made that possible', by:'Uzair', loc:'Verified guest', star:'★★★★☆' },
+      { q:'Awais was a great host, Very helpful instructions, special favour to checking in earlier than standard time, He was always ready to go an extra mile.', by:'Mujeeb', loc:'Ottawa, Canada', star:'★★★★★' },
+      { q:'Had a wonderful stay! The flat was very clean, comfortable, and exactly as described. The place truly felt like a home away from home. Highly recommended.', by:'Jahanzeb', loc:'Verified guest', star:'★★★★★' },
+      { q:'Great place a mini studio yo stay neat and clean, the host awais is very responsive overall great experience A+++', by:'Kabir', loc:'Islamabad, PK', star:'★★★★★' },
+      { q:'Elegant place with peaceful environment to stay for both single & couples, every facility nearby. Apartment with fully furnished & having all facilities. Fully recommended', by:'Ejaz Ul', loc:'Verified guest', star:'★★★★★' },
+    ];
+
+    this.TEAM_YOU = ['Revenue', 'Leadership', 'Local operations', 'Property access', 'Maintenance'];
+    this.TEAM_US = ['STR operations', 'Guest experience', 'Communication', 'Process & standards', 'Technology'];
+
+    this.PILOT = [
+      { n:'01', t:'One property', b:'Start with a single listing. Nothing else changes until it works.' },
+      { n:'02', t:'30 days', b:'A defined window, long enough to see real turnovers and real guests.' },
+      { n:'03', t:'Defined scope', b:'Agree the workflow and the operational problem we are solving up front.' },
+      { n:'04', t:'Measured outcomes', b:'We report on what actually moved. No long-term commitment.' },
+    ];
+
+    this.NAV = [
+      { n:'01', label:'PROOF', href:'#proof' },
+      { n:'02', label:'PROPERTIES', href:'#properties' },
+      { n:'03', label:'OPERATION', href:'#operation' },
+      { n:'04', label:'SYSTEMS', href:'#systems' },
+      { n:'05', label:'PARTNERSHIP', href:'#partnership' },
+      { n:'06', label:'PILOT', href:'#pilot' },
+    ];
+  }
+
+  componentDidMount(){
+    const rootEl = this.root.current;
+    if(!rootEl) return;
+    const doc = rootEl.ownerDocument;
+    const win = doc.defaultView;
+    this.win = win;
+    const reduce = this.props.motion === 'Reduced' || (win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if(this.props.accentColor) rootEl.style.setProperty('--accent', this.props.accentColor);
+
+    if(!reduce && 'IntersectionObserver' in win){
+      const els = rootEl.querySelectorAll('[data-reveal]');
+      els.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .95s cubic-bezier(.2,.7,.2,1), transform .95s cubic-bezier(.2,.7,.2,1)'; });
+      this._ro = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; this._ro.unobserve(e.target);} }); }, { threshold:0.14, rootMargin:'0px 0px -8% 0px' });
+      els.forEach(el => this._ro.observe(el));
+
+      const nums = rootEl.querySelectorAll('[data-count]');
+      this._co = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ this._countUp(e.target); this._co.unobserve(e.target);} }); }, { threshold:0.6 });
+      nums.forEach(n => this._co.observe(n));
+    }
+
+    win.addEventListener('scroll', this._onScroll, { passive:true });
+    this._onScroll();
+  }
+
+  _countUp(el){
+    const target = parseFloat(el.getAttribute('data-count'));
+    const dec = parseInt(el.getAttribute('data-dec')||'0', 10);
+    const fmt = v => dec ? v.toFixed(dec) : Math.round(v).toLocaleString();
+    const dur = 1300, t0 = performance.now(), win = this.win;
+    const tick = t => { let p = Math.min(1,(t-t0)/dur); p = 1-Math.pow(1-p,3); el.textContent = fmt(target*p); if(p<1) win.requestAnimationFrame(tick); else el.textContent = fmt(target); };
+    el.textContent = fmt(0); win.requestAnimationFrame(tick);
+  }
+
+  _onScroll(){
+    const win = this.win; if(!win) return;
+    const h = win.document.documentElement;
+    const max = h.scrollHeight - win.innerHeight;
+    const prog = max > 0 ? win.scrollY / max : 0;
+    const secs = this.root.current.querySelectorAll('[data-sec]');
+    let active = 0; const mid = win.scrollY + win.innerHeight * 0.4;
+    secs.forEach((s,i)=>{ const top = s.getBoundingClientRect().top + win.scrollY; if(top <= mid) active = i; });
+    if(Math.abs(prog - this.state.prog) > 0.003 || active !== this.state.active) this.setState({ prog, active });
+  }
+
+  componentWillUnmount(){
+    if(this.win) this.win.removeEventListener('scroll', this._onScroll);
+    if(this._ro) this._ro.disconnect();
+    if(this._co) this._co.disconnect();
+  }
+
+  renderVals(){
+    const { step, active } = this.state;
+    const navRail = this.NAV.map((x,i)=>({ ...x, op: i===active ? '1' : '0.42', w: i===active ? '30px' : '16px' }));
+    const steps = this.TIMELINE.map((m,i)=>({
+      time:m.time, label:m.label, tag:m.tag,
+      onClick: () => this.setState({ step:i }),
+      bg: i===step ? 'rgba(176,129,60,.12)' : 'transparent',
+      col: i===step ? 'var(--ink)' : 'var(--mut)',
+    }));
+    return {
+      root: this.root,
+      properties: this.PROPS,
+      reviews: this.REVIEWS,
+      insights: this.INSIGHTS,
+      teamYou: this.TEAM_YOU,
+      teamUs: this.TEAM_US,
+      pilot: this.PILOT,
+      navRail,
+      steps,
+      moment: this.TIMELINE[step],
+    };
+  }
+}
+</script>
+</body>
+</html>

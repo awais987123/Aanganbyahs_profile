@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Dependencies (not used by this static project, kept for safety)
+node_modules/
+
+# Secrets / environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+id_rsa*
+*credentials*
+
+# Logs / temp
+*.log
+tmp/
